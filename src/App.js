@@ -27,12 +27,12 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/login">
+        <Route exact path="/">
           {isLoggedIn ? <Redirect to="/dashboard" /> : <Login />}
         </Route>
         <Route path="/dashboard">
           <Link to="/contractor/add">Add Contractor</Link>
-          {isLoggedIn ? <Dashboard /> : <Redirect to="/login" />}
+          {isLoggedIn ? <Dashboard /> : <Redirect to="/" />}
         </Route>
         <Route exact path="/contractor/add">
           <NewContractor />
